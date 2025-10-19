@@ -1,3 +1,6 @@
+const CONFIG = {
+    API_URL: 'https://sttpumztk7.execute-api.us-east-1.amazonaws.com/prod/count'
+};
 
 // Function to update visitor count
 async function updateVisitorCount() {
@@ -46,8 +49,5 @@ function animateCount(element, start, end, duration) {
 
 // Run when page loads
 document.addEventListener("DOMContentLoaded", function () {
-  // For now, just show a demo number with animation
-  const counterElement = document.getElementById("visitor-count");
-  animateCount(counterElement, 0, 1234, 2000);
   updateVisitorCount();
 });
