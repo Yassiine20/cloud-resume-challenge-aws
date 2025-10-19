@@ -1,0 +1,8 @@
+/.vscode/
+./venv/
+__pycache__/
+./.python_cache__/
+
+config.js
+backend/*.zip
+
