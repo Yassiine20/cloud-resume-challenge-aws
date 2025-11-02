@@ -1,5 +1,5 @@
 const CONFIG = {
-    API_URL: 'https://lfwdlecl80.execute-api.us-east-1.amazonaws.com/prod'
+    API_URL: 'https://lfwdlecl80.execute-api.us-east-1.amazonaws.com/prod/count'
 };
 
 // Function to update visitor count
