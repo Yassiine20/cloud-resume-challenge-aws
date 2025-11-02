@@ -1,8 +1,35 @@
-/.vscode/
-./venv/
+# IDE
+.vscode/
+.idea/
+
+# Python
+venv/
+.venv/
+env/
 __pycache__/
-./.python_cache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.py[cod]
+*$py.class
+.pytest_cache/
 
+# AWS SAM
+.aws-sam/
+samconfig.toml
 
+# Lambda packaging
 backend/*.zip
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

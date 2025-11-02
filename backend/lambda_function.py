@@ -32,7 +32,7 @@ def lambda_handler(event, context):
             'body': json.dumps({'count': int(new_count)})
         }
 
-    except Exception as e:  # ← Python syntax
+    except Exception as e:  
         print(f"Error: {str(e)}")
         return {
             'statusCode': 500,
