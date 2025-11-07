@@ -65,11 +65,12 @@ body {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .nav-link:hover {
   color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 .download-btn {
@@ -80,13 +81,15 @@ body {
   border-radius: 0.5rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   display: inline-block;
+  border: none;
 }
 
 .download-btn:hover {
   background: var(--secondary-color);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .container {
@@ -155,11 +158,13 @@ body {
   border-radius: 0.5rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .get-in-touch-btn:hover {
   background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .contact-cards {
@@ -176,11 +181,14 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
 .contact-card-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
 }
 
 .contact-card-item i {
@@ -192,6 +200,11 @@ body {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.contact-card-item a:hover {
+  color: var(--primary-color);
 }
 
 .section {
@@ -199,6 +212,11 @@ body {
   border-radius: 1rem;
   padding: 2.5rem;
   margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.section:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .section-title {
@@ -259,12 +277,14 @@ body {
 .project-link {
   color: var(--text-secondary);
   font-size: 1rem;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
   text-decoration: none;
+  display: inline-block;
 }
 
 .project-link:hover {
   color: var(--primary-color);
+  transform: scale(1.15);
 }
 
 .experience-company,
@@ -320,12 +340,15 @@ body {
   border-radius: 0.5rem;
   font-size: 0.875rem;
   border: 1px solid var(--border-color);
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  cursor: default;
 }
 
 .skill-tag:hover {
   background: var(--primary-color);
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 .footer {
