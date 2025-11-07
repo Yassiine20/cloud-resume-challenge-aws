@@ -360,17 +360,148 @@ body {
 }
 
 @media (max-width: 768px) {
-  .contact-cards {
-    grid-template-columns: 1fr;
+  .nav-container {
+    padding: 1rem;
+    flex-wrap: wrap;
   }
-  
+
+  .nav-brand {
+    font-size: 1rem;
+  }
+
+  .nav-menu {
+    width: 100%;
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .download-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
   .profile-header {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
   
   .profile-left {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+  }
+
+  .get-in-touch-btn {
+    width: 100%;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-card-item {
+    padding: 1rem;
+  }
+
+  .contact-card-item a {
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+
+  .section {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .experience-item,
+  .education-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .experience-header,
+  .education-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .experience-title,
+  .education-title {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .experience-date,
+  .education-date {
+    white-space: normal;
+    font-size: 0.875rem;
+  }
+
+  .experience-list li {
+    font-size: 0.875rem;
+    padding-left: 1rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .visitor-counter {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-brand span {
+    font-size: 0.875rem;
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+  }
+
+  .contact-card-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .experience-title,
+  .education-title {
+    font-size: 0.95rem;
+  }
+
+  .skill-category-title {
+    font-size: 0.9rem;
   }
 }
