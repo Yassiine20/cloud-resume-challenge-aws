@@ -34,7 +34,7 @@ export default function Education() {
 
             <div>
               <h3 className="text-xl font-semibold text-white">
-                Bachelor enein Computer Science
+                Bachelor in Computer Science
               </h3>
               <p className="text-gray-400 mt-1">
                 The Higher Institute of Information Technologies and Communication
