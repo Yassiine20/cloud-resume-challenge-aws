@@ -32,17 +32,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Mohamed Yassine CHEBBI. All rights reserved.
           </p>
 
-          {/* Built with */}
-          <p className="text-gray-500 text-sm flex items-center gap-1">
-            Built with{' '}
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
-            >
-              ❤️
-            </motion.span>{' '}
-            & React
-          </p>
         </div>
       </div>
     </footer>

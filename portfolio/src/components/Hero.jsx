@@ -210,6 +210,9 @@ export default function Hero() {
             <FloatingBadge position="bottom-1/4 right-0" delay={0.4}>
               <span>🎯</span> Django
             </FloatingBadge>
+            <FloatingBadge position="bottom1/4 right-0" delay={0.4}>
+              <span>🎯</span> Spring Boot
+            </FloatingBadge>
           </motion.div>
         </div>
 

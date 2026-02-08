@@ -3,6 +3,18 @@ import { useRef } from 'react';
 
 const experiences = [
   {
+    title: 'End of Studies Intern',
+    company: 'EXCELLIA Solutions',
+    companyUrl: 'https://excellia.tn/',
+    location: 'Tunis, Tunisia',
+    date: 'February 2026 — Present',
+    points: [
+      'Working on developing a Platform for The monitoring of transactions to catch fraudelent transactions',
+      'Developing a Machine Learning model to detect fraudelent transactions',
+    ],
+    technologies: ['Angular', 'Spring Boot', 'PostgreSQL', 'Machine Learning'],
+  },
+  {
     title: 'Backend Developer Intern',
     company: 'Flouci',
     companyUrl: 'https://flouci.com',
@@ -51,7 +63,7 @@ export default function Experience() {
         }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
-      
+
       <div className="max-w-4xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -69,7 +81,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <motion.div 
+          <motion.div
             className="absolute left-0 md:left-8 top-0 bottom-0 w-px"
             style={{
               background: 'linear-gradient(to bottom, #FF00FF, #00FFFF, transparent)',
