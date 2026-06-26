@@ -19,7 +19,7 @@ export default function Footer() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#FF00FF] to-[#00FFFF] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#34d399] to-[#22d3ee] flex items-center justify-center">
               <span className="text-white font-bold text-sm">&gt;_</span>
             </div>
             <span className="text-white font-semibold">

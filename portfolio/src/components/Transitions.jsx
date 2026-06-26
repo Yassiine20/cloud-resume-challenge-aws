@@ -8,7 +8,7 @@ export function GlowingDivider() {
       <motion.div
         className="absolute w-full h-px"
         style={{
-          background: 'linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.5), rgba(0, 255, 255, 0.5), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), rgba(56, 189, 248, 0.5), transparent)',
         }}
         animate={{
           opacity: [0.3, 0.6, 0.3],
@@ -20,7 +20,7 @@ export function GlowingDivider() {
         }}
       />
       <motion.div
-        className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-[#FF00FF] to-[#00FFFF]"
+        className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-[#34d399] to-[#22d3ee]"
         animate={{
           x: ['-50vw', '50vw'],
           opacity: [0, 1, 1, 0],
@@ -31,7 +31,7 @@ export function GlowingDivider() {
           ease: 'easeInOut',
         }}
         style={{
-          boxShadow: '0 0 20px 5px rgba(255, 0, 255, 0.5)',
+          boxShadow: '0 0 20px 5px rgba(139, 92, 246, 0.5)',
         }}
       />
     </div>
@@ -98,7 +98,7 @@ export function FloatingDots({ position = 'left' }) {
       {dots.map((dot) => (
         <motion.div
           key={dot.id}
-          className="absolute rounded-full bg-gradient-to-r from-[#FF00FF] to-[#00FFFF]"
+          className="absolute rounded-full bg-gradient-to-r from-[#34d399] to-[#22d3ee]"
           style={{
             width: dot.size,
             height: dot.size,
@@ -128,8 +128,8 @@ export function GradientMesh({ className = '' }) {
       <svg width="100%" height="100%" viewBox="0 0 400 400" className="opacity-10">
         <defs>
           <linearGradient id="meshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FF00FF" />
-            <stop offset="100%" stopColor="#00FFFF" />
+            <stop offset="0%" stopColor="#34d399" />
+            <stop offset="100%" stopColor="#22d3ee" />
           </linearGradient>
         </defs>
         <motion.path
@@ -162,7 +162,7 @@ export function GlowBorder({ children, className = '' }) {
       <motion.div
         className="absolute -inset-px rounded-xl opacity-50"
         style={{
-          background: 'linear-gradient(135deg, #FF00FF, #00FFFF, #FF00FF)',
+          background: 'linear-gradient(135deg, #34d399, #22d3ee, #34d399)',
           backgroundSize: '200% 200%',
         }}
         animate={{
@@ -174,7 +174,7 @@ export function GlowBorder({ children, className = '' }) {
           ease: 'linear',
         }}
       />
-      <div className="relative bg-[#0a0a0f] rounded-xl">
+      <div className="relative bg-[#020617] rounded-xl">
         {children}
       </div>
     </div>

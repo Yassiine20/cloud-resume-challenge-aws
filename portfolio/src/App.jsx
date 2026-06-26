@@ -12,11 +12,14 @@ import { GlowingDivider } from './components/Transitions';
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      {/* Global animated background */}
+    <div className="relative min-h-screen overflow-x-hidden text-slate-50">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-[-8%] top-0 h-64 w-64 rounded-full bg-emerald-500/15 blur-3xl" />
+        <div className="absolute right-[-6%] top-24 h-72 w-72 rounded-full bg-sky-400/15 blur-3xl" />
+      </div>
+
       <Background />
-      
-      {/* Content */}
+
       <div className="relative z-10">
         <Navbar />
         <main>

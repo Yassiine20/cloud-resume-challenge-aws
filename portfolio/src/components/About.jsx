@@ -17,7 +17,7 @@ const expertise = [
     ),
     title: 'Backend Dev',
     subtitle: 'Django & FastAPI Expert',
-    color: 'from-[#FF00FF]',
+    color: 'from-[#34d399]',
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const expertise = [
     ),
     title: 'Databases',
     subtitle: 'PostgreSQL & MySQL',
-    color: 'from-[#00FFFF]',
+    color: 'from-[#22d3ee]',
   },
   {
     icon: (
@@ -37,7 +37,7 @@ const expertise = [
     ),
     title: 'Cloud',
     subtitle: 'AWS Infrastructure',
-    color: 'from-[#FF00FF]',
+    color: 'from-[#34d399]',
   },
 ];
 
@@ -76,7 +76,7 @@ export default function About() {
     <section id="about" className="py-24 relative" ref={ref}>
       {/* Section-specific floating elements */}
       <motion.div
-        className="absolute left-10 top-1/4 w-2 h-2 rounded-full bg-[#FF00FF]"
+        className="absolute left-10 top-1/4 w-2 h-2 rounded-full bg-[#34d399]"
         animate={{
           y: [-20, 20, -20],
           opacity: [0.3, 0.7, 0.3],
@@ -84,7 +84,7 @@ export default function About() {
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute right-20 top-1/3 w-3 h-3 rounded-full bg-[#00FFFF]"
+        className="absolute right-20 top-1/3 w-3 h-3 rounded-full bg-[#22d3ee]"
         animate={{
           y: [20, -20, 20],
           opacity: [0.3, 0.6, 0.3],
@@ -100,7 +100,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="text-[#FF00FF] font-mono text-sm">// ABOUT ME</span>
+          <span className="text-[#34d399] font-mono text-sm">// ABOUT ME</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">
             Crafting <span className="gradient-text text-glow">Digital</span> Experiences
           </h2>
@@ -115,7 +115,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <div className="glass-card gradient-border p-6 h-full hover:shadow-lg hover:shadow-[#FF00FF]/10 transition-all duration-300">
+            <div className="glass-card gradient-border p-6 h-full hover:shadow-lg hover:shadow-[#34d399]/10 transition-all duration-300">
               {/* Terminal Header */}
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -142,7 +142,7 @@ export default function About() {
                 </p>
 
                 {/* Code block */}
-                <div className="bg-[#0a0a0f] rounded-lg p-4 mt-6">
+                <div className="bg-[#020617] rounded-lg p-4 mt-6">
                   <pre className="text-sm font-mono">
                     <code>
                       <span className="text-purple-400">const</span>{' '}

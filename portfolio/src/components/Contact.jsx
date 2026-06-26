@@ -11,7 +11,7 @@ const contactInfo = [
     label: 'EMAIL',
     value: 'mohamed.y.chebbi@gmail.com',
     href: 'mailto:mohamed.y.chebbi@gmail.com',
-    gradient: 'from-[#00FFFF] to-[#00FFFF]',
+    gradient: 'from-[#22d3ee] to-[#22d3ee]',
   },
   {
     icon: (
@@ -22,7 +22,7 @@ const contactInfo = [
     label: 'PHONE',
     value: '+216 96 130 130',
     href: 'tel:+21696130130',
-    gradient: 'from-[#FF00FF] to-[#00FFFF]',
+    gradient: 'from-[#34d399] to-[#22d3ee]',
   },
   {
     icon: (
@@ -33,7 +33,7 @@ const contactInfo = [
     label: 'LOCATION',
     value: 'Tunis, Tunisia',
     href: null,
-    gradient: 'from-[#FF00FF] to-[#FF00FF]',
+    gradient: 'from-[#34d399] to-[#34d399]',
   },
 ];
 
@@ -75,7 +75,7 @@ export default function Contact() {
     <section id="contact" className="py-24 relative" ref={ref}>
       {/* Floating elements */}
       <motion.div
-        className="absolute left-[8%] top-1/4 w-3 h-3 rounded-full bg-[#FF00FF]"
+        className="absolute left-[8%] top-1/4 w-3 h-3 rounded-full bg-[#34d399]"
         animate={{
           y: [-20, 20, -20],
           opacity: [0.3, 0.6, 0.3],
@@ -83,7 +83,7 @@ export default function Contact() {
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute right-[12%] top-1/3 w-2 h-2 rounded-full bg-[#00FFFF]"
+        className="absolute right-[12%] top-1/3 w-2 h-2 rounded-full bg-[#22d3ee]"
         animate={{
           y: [15, -15, 15],
           x: [-5, 5, -5],
@@ -92,7 +92,7 @@ export default function Contact() {
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
       />
       <motion.div
-        className="absolute left-[20%] bottom-1/4 w-2 h-2 rounded-full bg-[#00FFFF]"
+        className="absolute left-[20%] bottom-1/4 w-2 h-2 rounded-full bg-[#22d3ee]"
         animate={{
           y: [10, -10, 10],
           opacity: [0.3, 0.5, 0.3],
@@ -100,7 +100,7 @@ export default function Contact() {
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
       <motion.div
-        className="absolute right-[8%] bottom-1/3 w-4 h-4 rounded-full bg-[#FF00FF]/30 blur-sm"
+        className="absolute right-[8%] bottom-1/3 w-4 h-4 rounded-full bg-[#34d399]/30 blur-sm"
         animate={{
           scale: [1, 1.5, 1],
           opacity: [0.2, 0.4, 0.2],
@@ -116,12 +116,12 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <span className="text-[#FF00FF] font-mono text-sm">// CONTACT</span>
+          <span className="text-[#34d399] font-mono text-sm">// CONTACT</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">
             Let's <span className="gradient-text text-glow">Connect</span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-lg mx-auto">
-            I'm always open to discussing new opportunities, projects, or just having a chat about tech.
+            I&apos;m always open to discussing internships, backend projects, cloud work, or simply exchanging ideas around software engineering.
           </p>
         </motion.div>
 
@@ -146,7 +146,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <span className="text-gray-500 text-xs uppercase tracking-wider">{item.label}</span>
-                      <p className="text-white group-hover:text-[#00FFFF] transition-colors">{item.value}</p>
+                      <p className="text-white group-hover:text-[#22d3ee] transition-colors">{item.value}</p>
                     </div>
                   </a>
                 ) : (
@@ -213,7 +213,7 @@ export default function Contact() {
                     <p className="text-gray-500 text-sm">{item.value}</p>
                   </div>
                 </div>
-                <svg className="w-5 h-5 text-gray-500 group-hover:text-[#00FFFF] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-gray-500 group-hover:text-[#22d3ee] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </motion.a>
@@ -225,7 +225,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="block w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#FF00FF] to-[#00FFFF] text-white font-medium text-center hover:shadow-lg hover:shadow-[#FF00FF]/25 transition-all mt-4"
+              className="block w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#34d399] to-[#22d3ee] text-white font-medium text-center hover:shadow-lg hover:shadow-[#34d399]/25 transition-all mt-4"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

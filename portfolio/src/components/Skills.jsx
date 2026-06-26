@@ -57,7 +57,7 @@ function AnimatedProgressBar({ skill, isInView, delay }) {
       </div>
       <div className="h-2 bg-white/10 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-[#FF00FF] to-[#00FFFF] rounded-full relative"
+          className="h-full bg-gradient-to-r from-[#34d399] to-[#22d3ee] rounded-full relative"
           initial={{ width: 0 }}
           animate={{ width: `${width}%` }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
@@ -78,7 +78,7 @@ export default function Skills() {
     <section id="skills" className="py-24 relative" ref={ref}>
       {/* Floating accent elements */}
       <motion.div
-        className="absolute right-10 top-20 w-32 h-32 rounded-full bg-[#FF00FF]/5 blur-2xl"
+        className="absolute right-10 top-20 w-32 h-32 rounded-full bg-[#34d399]/5 blur-2xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -86,7 +86,7 @@ export default function Skills() {
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute left-20 bottom-20 w-40 h-40 rounded-full bg-[#00FFFF]/5 blur-2xl"
+        className="absolute left-20 bottom-20 w-40 h-40 rounded-full bg-[#22d3ee]/5 blur-2xl"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.3, 0.5, 0.3],
@@ -102,7 +102,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="text-[#FF00FF] font-mono text-sm">// SKILLS</span>
+          <span className="text-[#34d399] font-mono text-sm">// SKILLS</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">
             Tech <span className="gradient-text text-glow">Stack</span>
           </h2>
@@ -116,7 +116,7 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + catIndex * 0.1 }}
-              className="glass-card gradient-border p-6 hover:shadow-lg hover:shadow-[#00FFFF]/10 transition-all duration-300"
+              className="glass-card gradient-border p-6 hover:shadow-lg hover:shadow-[#22d3ee]/10 transition-all duration-300"
             >
               <h3 className="text-xl font-semibold text-white mb-6 text-center">
                 {category.title}
@@ -154,9 +154,9 @@ export default function Skills() {
                 transition={{ duration: 0.3, delay: 0.6 + index * 0.03 }}
                 whileHover={{ 
                   scale: 1.1, 
-                  backgroundColor: 'rgba(255, 0, 255, 0.2)',
-                  borderColor: 'rgba(255, 0, 255, 0.5)',
-                  boxShadow: '0 0 15px rgba(255, 0, 255, 0.3)'
+                  backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                  borderColor: 'rgba(139, 92, 246, 0.5)',
+                  boxShadow: '0 0 15px rgba(139, 92, 246, 0.3)'
                 }}
                 className="px-4 py-2 rounded-full text-sm bg-white/5 border border-white/10 text-gray-300 cursor-default transition-all duration-200"
               >

@@ -7,7 +7,7 @@ const experiences = [
     company: 'EXCELLIA Solutions',
     companyUrl: 'https://excellia.tn/',
     location: 'Tunis, Tunisia',
-    date: 'February 2026 — Present',
+    date: 'February 2026 — Mai 2026',
     points: [
       'Working on developing a Platform for The monitoring of transactions to catch fraudelent transactions',
       'Developing a Machine Learning model to detect fraudelent transactions',
@@ -38,7 +38,7 @@ export default function Experience() {
     <section id="experience" className="py-24 relative" ref={ref}>
       {/* Floating accent dots */}
       <motion.div
-        className="absolute left-[5%] top-1/3 w-2 h-2 rounded-full bg-[#00FFFF]"
+        className="absolute left-[5%] top-1/3 w-2 h-2 rounded-full bg-[#22d3ee]"
         animate={{
           y: [-15, 15, -15],
           opacity: [0.4, 0.8, 0.4],
@@ -47,7 +47,7 @@ export default function Experience() {
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute right-[10%] top-1/4 w-3 h-3 rounded-full bg-[#FF00FF]"
+        className="absolute right-[10%] top-1/4 w-3 h-3 rounded-full bg-[#34d399]"
         animate={{
           y: [10, -10, 10],
           opacity: [0.3, 0.6, 0.3],
@@ -55,7 +55,7 @@ export default function Experience() {
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
       />
       <motion.div
-        className="absolute right-[15%] bottom-1/4 w-2 h-2 rounded-full bg-[#00FFFF]"
+        className="absolute right-[15%] bottom-1/4 w-2 h-2 rounded-full bg-[#22d3ee]"
         animate={{
           y: [-10, 10, -10],
           x: [5, -5, 5],
@@ -72,7 +72,7 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="text-[#FF00FF] font-mono text-sm">// EXPERIENCE</span>
+          <span className="text-[#34d399] font-mono text-sm">// EXPERIENCE</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">
             Where I've <span className="gradient-text text-glow">Worked</span>
           </h2>
@@ -84,7 +84,7 @@ export default function Experience() {
           <motion.div
             className="absolute left-0 md:left-8 top-0 bottom-0 w-px"
             style={{
-              background: 'linear-gradient(to bottom, #FF00FF, #00FFFF, transparent)',
+              background: 'linear-gradient(to bottom, #34d399, #22d3ee, transparent)',
             }}
             initial={{ scaleY: 0, originY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
@@ -104,9 +104,9 @@ export default function Experience() {
                 initial={{ scale: 0 }}
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.2 }}
-                className="absolute left-0 md:left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#00FFFF] border-4 border-[#0a0a0f]"
+                className="absolute left-0 md:left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#22d3ee] border-4 border-[#020617]"
               >
-                <span className="absolute inset-0 rounded-full bg-[#00FFFF] animate-ping opacity-30" />
+                <span className="absolute inset-0 rounded-full bg-[#22d3ee] animate-ping opacity-30" />
               </motion.div>
 
               {/* Experience Card */}
@@ -115,8 +115,8 @@ export default function Experience() {
                   {/* Left content */}
                   <div className="flex items-start gap-4">
                     {/* Company Icon */}
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF00FF]/20 to-[#00FFFF]/20 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-[#00FFFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#34d399]/20 to-[#22d3ee]/20 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-[#22d3ee]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>
@@ -127,7 +127,7 @@ export default function Experience() {
                         href={exp.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#00FFFF] hover:underline flex items-center gap-1 mt-1"
+                        className="text-[#22d3ee] hover:underline flex items-center gap-1 mt-1"
                       >
                         {exp.company}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ export default function Experience() {
                       transition={{ duration: 0.4, delay: 0.5 + pointIndex * 0.1 }}
                       className="flex items-start gap-3 text-gray-400"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00FFFF] mt-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#22d3ee] mt-2 flex-shrink-0" />
                       {point}
                     </motion.li>
                   ))}
@@ -173,7 +173,7 @@ export default function Experience() {
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 rounded-full text-sm border border-[#00FFFF]/30 text-[#00FFFF] bg-[#00FFFF]/10"
+                      className="px-3 py-1 rounded-full text-sm border border-[#22d3ee]/30 text-[#22d3ee] bg-[#22d3ee]/10"
                     >
                       {tech}
                     </span>

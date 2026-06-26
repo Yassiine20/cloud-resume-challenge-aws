@@ -3,6 +3,24 @@ import { useRef } from 'react';
 
 const projects = [
   {
+    title: 'ChicBot',
+    subtitle: 'E-Commerce Chatbot',
+    date: 'Nov — Dec 2025',
+    description: 'Multilingual e-commerce chatbot with DistilBERT intent classification and personalized recommendations.',
+    features: [
+      'Real-time translation',
+      'Conversational context management',
+      'Dynamic product suggestions',
+    ],
+    technologies: ['Python', 'FastAPI', 'Vanilla HTML/CSS', 'Jupyter', 'Transformers'],
+    github: 'https://github.com/Yassiine20/commercial-chatbot',
+    icon: (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+    </svg>
+  ),
+  },
+  {
     title: 'Cloud Resume Challenge',
     subtitle: 'AWS Cloud Infrastructure',
     date: 'October 2025',
@@ -38,6 +56,7 @@ const projects = [
       </svg>
     ),
   },
+  
 ];
 
 export default function Projects() {
@@ -48,7 +67,7 @@ export default function Projects() {
     <section id="projects" className="py-24 relative" ref={ref}>
       {/* Floating accent elements */}
       <motion.div
-        className="absolute right-[5%] top-1/4 w-3 h-3 rounded-full bg-[#FF00FF]"
+        className="absolute right-[5%] top-1/4 w-3 h-3 rounded-full bg-[#34d399]"
         animate={{
           y: [-15, 15, -15],
           opacity: [0.3, 0.6, 0.3],
@@ -56,7 +75,7 @@ export default function Projects() {
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute left-[8%] top-1/2 w-2 h-2 rounded-full bg-[#00FFFF]"
+        className="absolute left-[8%] top-1/2 w-2 h-2 rounded-full bg-[#22d3ee]"
         animate={{
           y: [10, -10, 10],
           x: [5, -5, 5],
@@ -73,7 +92,7 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="text-[#FF00FF] font-mono text-sm">// PROJECTS</span>
+          <span className="text-[#34d399] font-mono text-sm">// PROJECTS</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">
             Featured <span className="gradient-text text-glow">Work</span>
           </h2>
@@ -97,12 +116,12 @@ export default function Projects() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="flex items-start gap-4">
                     {/* Icon */}
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF00FF]/20 to-[#00FFFF]/20 flex items-center justify-center text-[#FF00FF] flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#34d399]/20 to-[#22d3ee]/20 flex items-center justify-center text-[#34d399] flex-shrink-0">
                       {project.icon}
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-semibold text-white group-hover:text-[#00FFFF] transition-colors">
+                      <h3 className="text-xl font-semibold text-white group-hover:text-[#22d3ee] transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-gray-500 text-sm mt-1">{project.subtitle}</p>
@@ -143,7 +162,7 @@ export default function Projects() {
                 <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4">
                   {project.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2 text-gray-400 text-sm">
-                      <svg className="w-4 h-4 text-[#00FFFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-[#22d3ee]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                       </svg>
                       {feature}
