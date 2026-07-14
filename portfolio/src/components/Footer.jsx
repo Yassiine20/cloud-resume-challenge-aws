@@ -1,40 +1,12 @@
-import { motion } from 'framer-motion';
-import VisitorCounter from './VisitorCounter';
-
 export default function Footer() {
   return (
-    <>
-      <VisitorCounter />
-
-    <footer className="py-8 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Logo */}
-          <motion.a
-            href="#"
-            className="flex items-center gap-2"
-            whileHover={{ scale: 1.02 }}
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#34d399] to-[#22d3ee] flex items-center justify-center">
-              <span className="text-white font-bold text-sm">&gt;_</span>
-            </div>
-            <span className="text-white font-semibold">
-              yassine<span className="text-gray-400">.dev</span>
-            </span>
-          </motion.a>
-
-          {/* Copyright */}
-          <p className="text-gray-500 text-sm text-center">
-            © {new Date().getFullYear()} Mohamed Yassine CHEBBI. All rights reserved.
-          </p>
-
-        </div>
+    <footer className="py-8">
+      <div className="section-container flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p className="font-display text-sm font-bold text-primary">M.Y.C</p>
+        <p style={{ fontSize: '12px', color: '#9A9A9A' }}>
+          &copy; {new Date().getFullYear()} Mohamed Yassine CHEBBI
+        </p>
       </div>
     </footer>
-    </>
   );
 }

@@ -1,14 +1,52 @@
 @import "tailwindcss";
 
+@theme {
+  --color-surface: #F8F5F2;
+  --color-surface-dim: #E8E4E0;
+  --color-surface-bright: #F8F5F2;
+  --color-surface-container-lowest: #FCFCFC;
+  --color-surface-container-low: #F3F0ED;
+  --color-surface-container: #EDEAE7;
+  --color-surface-container-high: #E7E4E1;
+  --color-surface-container-highest: #E1DEDB;
+  --color-on-surface: #111111;
+  --color-on-surface-variant: #6F6F6F;
+  --color-inverse-surface: #2A2A2A;
+  --color-inverse-on-surface: #F4F0EF;
+  --color-outline: #9A9A9A;
+  --color-outline-variant: #DADADA;
+  --color-surface-tint: #5f5e5e;
+  --color-primary: #111111;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1c1b1b;
+  --color-on-primary-container: #858383;
+  --color-inverse-primary: #c8c6c5;
+  --color-secondary: #5d5f5d;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e2e3e1;
+  --color-on-secondary-container: #636563;
+  --color-border-subtle: #E8E8E8;
+  --color-border-card: #ECECEC;
+  --color-green-accent: #14D67B;
+  --color-orange-accent: #D59A5D;
+  --color-black-deep: #0E0E0E;
+  --color-muted: #9A9A9A;
+  --color-code-bg: #151515;
+
+  --font-display: 'Hanken Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
 @layer base {
   :root {
-    color-scheme: dark;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    color-scheme: light;
+    font-family: var(--font-body);
   }
 
   * {
     box-sizing: border-box;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-border-subtle);
   }
 
   html {
@@ -18,161 +56,152 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background:
-      radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
-      radial-gradient(circle at 85% 0%, rgba(56, 189, 248, 0.14), transparent 24%),
-      linear-gradient(135deg, #030711 0%, #060816 45%, #02040a 100%);
-    color: #f8fafc;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
-    opacity: 0.35;
-  }
-
   ::selection {
-    background: rgba(139, 92, 246, 0.35);
-    color: #fff;
+    background-color: rgba(17, 17, 17, 0.12);
+    color: var(--color-on-surface);
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #030711;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #ff00ff, #00ffff);
+    background: var(--color-outline-variant);
     border-radius: 999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    opacity: 0.9;
+    background: var(--color-outline);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
   }
 }
 
 @layer utilities {
-  .gradient-text {
-    background: linear-gradient(90deg, #34d399 0%, #22d3ee 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .section-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  .glass-card {
-    background: rgba(9, 13, 28, 0.74);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 1.15rem;
-    box-shadow: 0 20px 60px rgba(2, 6, 23, 0.35);
-    transition: all 0.3s ease;
+  @media (min-width: 768px) {
+    .section-container {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 
-  .glass-card:hover {
-    background: rgba(13, 18, 35, 0.82);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
-  .gradient-border {
-    position: relative;
-    border-radius: 1.15rem;
+  .section-gap {
+    padding-top: 140px;
+    padding-bottom: 140px;
   }
 
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(56, 189, 248, 0.9));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0.65;
-    transition: opacity 0.3s ease;
+  @media (max-width: 767px) {
+    .section-gap {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
   }
 
-  .gradient-border:hover::before {
-    opacity: 1;
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-on-surface);
   }
 
-  .animated-gradient {
-    background: linear-gradient(-45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+  .card {
+    border: 1px solid var(--color-border-card);
+    border-radius: 4px;
+    padding: 40px;
+    background-color: var(--color-surface-container-lowest);
   }
 
-  .glow-magenta {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  .card-hover {
+    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
 
-  .glow-sky {
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  .card-hover:hover {
+    border-color: var(--color-outline);
+    background-color: var(--color-surface-container-low);
   }
 
-  .text-glow {
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.45), 0 0 40px rgba(56, 189, 248, 0.25);
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 999px;
+    color: var(--color-on-surface-variant);
+    background: transparent;
   }
-}
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
   }
-  50% {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.5), 0 0 60px rgba(56, 189, 248, 0.3);
+
+  .btn-primary:hover {
+    opacity: 0.85;
   }
-}
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--color-on-surface);
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #DADADA;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+  }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
+  .btn-secondary:hover {
+    background-color: var(--color-surface-container);
+  }
 }

@@ -1,33 +1,33 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 
 const skillCategories = [
   {
     title: 'Languages',
-    skills: [
-      { name: 'Python', level: 90 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'TypeScript', level: 80 },
-      { name: 'HTML/CSS', level: 90 },
-    ],
+    icon: (
+      <svg className="w-4 h-4" fill="none" stroke="#14D67B" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+    skills: ['Python', 'JavaScript', 'TypeScript', 'HTML/CSS'],
   },
   {
     title: 'Frameworks',
-    skills: [
-      { name: 'Django', level: 90 },
-      { name: 'FastAPI', level: 80 },
-      { name: 'Angular', level: 75 },
-      { name: 'REST APIs', level: 85 },
-    ],
+    icon: (
+      <svg className="w-4 h-4" fill="none" stroke="#D59A5D" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+      </svg>
+    ),
+    skills: ['Django', 'FastAPI', 'Angular', 'REST APIs'],
   },
   {
     title: 'Tools & Cloud',
-    skills: [
-      { name: 'AWS', level: 75 },
-      { name: 'Docker', level: 70 },
-      { name: 'PostgreSQL', level: 85 },
-      { name: 'Git', level: 90 },
-    ],
+    icon: (
+      <svg className="w-4 h-4" fill="none" stroke="#9A9A9A" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+      </svg>
+    ),
+    skills: ['AWS', 'Docker', 'PostgreSQL', 'Git'],
   },
 ];
 
@@ -37,131 +37,112 @@ const allTechnologies = [
   'REST APIs', 'Microservices', 'Celery', 'OpenAI', 'HTML/CSS', 'Tailwind',
 ];
 
-function AnimatedProgressBar({ skill, isInView, delay }) {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    if (isInView) {
-      const timer = setTimeout(() => {
-        setWidth(skill.level);
-      }, delay);
-      return () => clearTimeout(timer);
-    }
-  }, [isInView, skill.level, delay]);
-
-  return (
-    <div className="space-y-2">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-300">{skill.name}</span>
-        <span className="text-gray-500 text-sm">{skill.level}%</span>
-      </div>
-      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-        <motion.div
-          className="h-full bg-gradient-to-r from-[#34d399] to-[#22d3ee] rounded-full relative"
-          initial={{ width: 0 }}
-          animate={{ width: `${width}%` }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-        >
-          {/* Shimmer effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
-        </motion.div>
-      </div>
-    </div>
-  );
-}
-
 export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="skills" className="py-24 relative" ref={ref}>
-      {/* Floating accent elements */}
-      <motion.div
-        className="absolute right-10 top-20 w-32 h-32 rounded-full bg-[#34d399]/5 blur-2xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute left-20 bottom-20 w-40 h-40 rounded-full bg-[#22d3ee]/5 blur-2xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-      />
-      
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
+    <section id="skills" className="section-gap" ref={ref}>
+      <div className="section-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.4 }}
         >
-          <span className="text-[#34d399] font-mono text-sm">// SKILLS</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">
-            Tech <span className="gradient-text text-glow">Stack</span>
+          <h2
+            className="font-display font-bold text-primary"
+            style={{
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              lineHeight: '1.1',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Tech<br />stack.
           </h2>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="mt-16 grid md:grid-cols-3" style={{ gap: '28px' }}>
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + catIndex * 0.1 }}
-              className="glass-card gradient-border p-6 hover:shadow-lg hover:shadow-[#22d3ee]/10 transition-all duration-300"
+              transition={{ duration: 0.4, delay: 0.1 + catIndex * 0.08 }}
+              style={{
+                border: '1px solid #ECECEC',
+                borderRadius: '4px',
+                padding: '36px',
+                backgroundColor: '#FCFCFC',
+              }}
             >
-              <h3 className="text-xl font-semibold text-white mb-6 text-center">
-                {category.title}
-              </h3>
+              <div className="flex items-center gap-3 mb-8">
+                {category.icon}
+                <p
+                  style={{
+                    fontSize: '11px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    color: '#9A9A9A',
+                    fontFamily: 'var(--font-mono)',
+                  }}
+                >
+                  {category.title}
+                </p>
+              </div>
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <AnimatedProgressBar
-                    key={skill.name}
-                    skill={skill}
-                    isInView={isInView}
-                    delay={300 + catIndex * 100 + skillIndex * 100}
-                  />
+                {category.skills.map((skill) => (
+                  <p
+                    key={skill}
+                    style={{ fontSize: '14px', color: '#6F6F6F' }}
+                  >
+                    {skill}
+                  </p>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* All Technologies */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="glass-card gradient-border p-8"
+          transition={{ duration: 0.4, delay: 0.35 }}
+          className="mt-8"
+          style={{
+            border: '1px solid #ECECEC',
+            borderRadius: '4px',
+            padding: '36px',
+            backgroundColor: '#FCFCFC',
+          }}
         >
-          <h3 className="text-xl font-semibold text-white mb-6 text-center">
+          <p
+            className="text-center mb-6"
+            style={{
+              fontSize: '11px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: '#9A9A9A',
+              fontFamily: 'var(--font-mono)',
+            }}
+          >
             All Technologies
-          </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {allTechnologies.map((tech, index) => (
-              <motion.span
+          </p>
+          <div className="flex flex-wrap justify-center" style={{ gap: '8px' }}>
+            {allTechnologies.map((tech) => (
+              <span
                 key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.6 + index * 0.03 }}
-                whileHover={{ 
-                  scale: 1.1, 
-                  backgroundColor: 'rgba(139, 92, 246, 0.2)',
-                  borderColor: 'rgba(139, 92, 246, 0.5)',
-                  boxShadow: '0 0 15px rgba(139, 92, 246, 0.3)'
+                style={{
+                  fontSize: '11px',
+                  fontFamily: 'var(--font-mono)',
+                  padding: '4px 12px',
+                  border: '1px solid #DADADA',
+                  borderRadius: '999px',
+                  color: '#9A9A9A',
+                  backgroundColor: 'transparent',
                 }}
-                className="px-4 py-2 rounded-full text-sm bg-white/5 border border-white/10 text-gray-300 cursor-default transition-all duration-200"
               >
                 {tech}
-              </motion.span>
+              </span>
             ))}
           </div>
         </motion.div>
