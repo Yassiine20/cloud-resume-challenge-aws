@@ -60,4 +60,4 @@ def test_response_format(dynamodb_table):
     
     assert result['statusCode'] == 200
     assert 'Access-Control-Allow-Origin' in result['headers']
-    assert result['headers']['Access-Control-Allow-Origin'] == '*'
+    assert result['headers']['Access-Control-Allow-Origin'] == 'https://yassineresume.dev'

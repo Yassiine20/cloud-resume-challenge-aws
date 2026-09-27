@@ -6,34 +6,49 @@ on:
       - main
     paths:
       - 'backend/**'
+      - 'requirements.txt'
+      - '.github/workflows/backend-deploy.yml'
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1  
-      
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: requirements.txt
+
       - name: Install dependencies
-        run: |
-          cd backend
-          pip install -r requirements.txt -t . || echo "No requirements.txt found"
-      
+        run: python -m pip install -r requirements.txt
+
+      - name: Test Lambda function
+        run: python -m pytest backend/test_lambda_function.py -v
+
       - name: Package Lambda function
         run: |
           cd backend
-          zip -r function.zip lambda_function.py
-      
+          zip "$RUNNER_TEMP/function.zip" lambda_function.py
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_BACKEND_ROLE_ARN }}
+          aws-region: ${{ secrets.REGION }}
+
       - name: Deploy to Lambda
         run: |
           aws lambda update-function-code \
             --function-name VisitorCounter \
-            --zip-file fileb://backend/function.zip
+            --zip-file "fileb://$RUNNER_TEMP/function.zip"
+          aws lambda wait function-updated-v2 \
+            --function-name VisitorCounter
