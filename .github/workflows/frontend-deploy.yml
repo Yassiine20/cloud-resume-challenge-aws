@@ -44,7 +44,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v6.3.0
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ secrets.REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
       
       - name: Sync S3 bucket
         run: aws s3 sync dist "s3://${{ secrets.S3_BUCKET_NAME }}" --delete
